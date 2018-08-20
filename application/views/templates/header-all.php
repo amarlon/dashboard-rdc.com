@@ -1,5 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+  if($this->uri->segment(1)=='En'){
+    $segment='Fr';
+    $images='France.png';
+    $segment2='En';
+  }
+  else{
+    $segment='En';
+    $segment2='Fr';
+    $images='England.png';
+  }
+
 ?>
 <!doctype html>
 <html lang="fr" class="full-height">
@@ -8,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="icon" href="<?= base_url('assets/images/logo_icone/dash.ico')?>">
     <title><?php echo $title;?></title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <link href="<?= base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/mdb.min.css')?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/style.css')?>" rel="stylesheet">
@@ -18,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!--Navigation & Intro-->
   <header>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" >
+     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" >
       <div class="container">
         <a class="navbar-brand" href="#"><img class="rounded-circle" src="<?= base_url('assets/images/logo_icone/dash.jpg')?>" alt="logo-dashboard-rdc" width="50px" height="50px" style="padding: 2px;
           background: #3cff00;" /></a>
@@ -28,37 +39,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto smooth-scroll">
             <li class="nav-item">
-              <a class="nav-link waves-effect waves-light"  onclick="location.href='<?php echo base_url('/');?>'">Acceuil <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect waves-light" onclick="location.href='<?php echo base_url('plateforme/apropos');?>'" href="#app" data-offset="100"> <?php if($title!="Connaitre plus sur nous..."){;?> À propos <?php }?></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect waves-light "  onclick="location.href='<?php echo base_url('plateforme/services');?>'" href="#serv" data-offset="90"> <?php if($title!="#"){;?>Nos services<?php } ?></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect waves-light" href="#real" data-offset="100"  onclick="location.href='<?php echo base_url('plateforme/realisation');?>'">
-                <?php if($title!="Connaitre nos réalisations..."){;?> Nos réalisations <?php } ?></a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link waves-effect waves-light" href="#contact" data-offset="100">Contact</a>
+              <a class="nav-link waves-effect waves-light"  href="#home"><?=$this->lang->line('dasrdc_acceuil');?> <span class="sr-only">(current)</span></a>
             </li>
           </ul>
           <!-- Social Icon  -->
           <ul class="navbar-nav nav-flex-icons">
             <li class="nav-item">
-
-                    <a  href="<?php echo base_url();?>users" class="nav-link waves-effect waves-light">Forum</a>
-         
+                <a  href="<?php echo base_url();?><?php echo  $segment;?>/plateforme/apropos" class="nav-link waves-effect waves-light" style="    background: white;border-radius: 15px;color: #0c983f;font-weight: 700;"><?php echo  $segment;?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect waves-light"><i class="fa fa-facebook"></i></a>
+                <a  href="<?php echo base_url();?><?php echo  $segment;?>/users" class="nav-link waves-effect waves-light">Forum</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.facebook.com/Dashboardrdc/" class="nav-link waves-effect waves-light"><i class="fa fa-facebook"></i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link waves-effect waves-light"><i class="fa fa-google-plus"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect waves-light"><i class="fa fa-youtube"></i></a>
+              <a   class="nav-link waves-effect waves-light"><i class="fa fa-youtube"></i></a>
             </li>
           </ul>
         </div>

@@ -6,9 +6,7 @@
   <link href="<?= base_url('assets/css/users.css')?>" rel="stylesheet">
   <link href="<?= base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
   <link rel="icon" href="<?= base_url('assets/images/logo_icone/dash.ico')?>">
-
 </head>
-
 <body>
   <div class="login-page">
    <div class="form">

@@ -12,8 +12,8 @@
       <input type="password" id="confirmPassword" class="form-control" placeholder="<?php echo $this->lang->line('bcc_password_confirm');?>" name="password_confirm" required>
       <br>
           <!--<?php //echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
-      <?php// if(isset($_SESSION['success'])){?>
-           <div class="alert alert-success"><?php //echo $_SESSION['success']; ?><br>
+    //il y a un phpau debut if(isset($_SESSION['success'])){?>
+           <div class="alert alert-success"> //il y a une php au debut, echo $_SESSION['success']; ?><br>
                
                <a class="nav-link disabled" href="<?php //echo base_url()?><?php //echo $this->uri->segment(1)?>/sign"><button type="button" class="btn btn-info"> <?php //echo $this->lang->line('bcc_signin_label');?> </button>
                </a>

@@ -23,8 +23,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="<?= base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/mdb.min.css')?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/style.css')?>" rel="stylesheet">
-    
+    <style>
+    .next{
+      color: white;background: black;width: fit-content;padding-left: 16px;padding-right: 16px;border-radius: 26px;font-size: 33px;position: absolute;z-index: 100000;top: 50%;margin-left: 10px;cursor: pointer
+    }
+    .prev{
+      color: white;background: black;width: fit-content;padding-left: 16px;padding-right: 16px;border-radius: 26px;font-size: 33px;position: absolute;z-index: 100000;top: 50%;right: 20px;cursor: pointer
+    }
+    </style>
   </head>
+  
   <body class="designer">
   <!--Navigation & Intro-->
   <header>
@@ -39,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto smooth-scroll">
             <li class="nav-item">
-              <a class="nav-link waves-effect waves-light"  href="index.html"><?=$this->lang->line('dasrdc_acceuil');?> <span class="sr-only">(current)</span></a>
+              <a class="nav-link waves-effect waves-light"  href="#home"><?=$this->lang->line('dasrdc_acceuil');?> <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link waves-effect waves-light" href="#app" data-offset="100"> <?=$this->lang->line('dasrdc_propos');?></a>
@@ -60,16 +68,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <a  href="<?php echo base_url();?><?php echo  $segment;?>/home" class="nav-link waves-effect waves-light" style="    background: white;border-radius: 15px;color: #0c983f;font-weight: 700;"><?php echo  $segment;?></a>
             </li>
             <li class="nav-item">
-                <a  href="<?php echo base_url();?>users" class="nav-link waves-effect waves-light">Forum</a>
+                <a  href="<?php echo base_url();?><?php echo  $segment;?>/users" class="nav-link waves-effect waves-light">Forum</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect waves-light"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.facebook.com/Dashboardrdc/" class="nav-link waves-effect waves-light"><i class="fa fa-facebook"></i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link waves-effect waves-light"><i class="fa fa-google-plus"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect waves-light"><i class="fa fa-youtube"></i></a>
+              <a   class="nav-link waves-effect waves-light"><i class="fa fa-youtube"></i></a>
             </li>
           </ul>
         </div>
@@ -82,8 +90,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-xs-12 col-md-12 " style="background: #39800099;">
               <div class="wow fadeInUp text-center " style="padding: 10px">
                 <h3 class="display-4 font-bold white-text mb-3"><b>DASHBOARD-RDCONGO</b></h3>
-                <h4 class="font-up font-bold white-text"><b><?php echo $this->lang->line('dasrdc_first_title');?> </b></h4>
-                <h5 class=" mt-3 white-text" style="font-size: bolder"><?php echo $this->lang->line('dasrdc_first_welcome');?></h5>
+                <h4 class="font-up font-bold white-text"><b>IMAGINE WHAT WE CAN DO TOGHETER </b></h4>
+                <h5 class=" mt-3 white-text" style="font-size: bolder">WELCOME IN TO OUR PLATFORM</h5>
               </div>
             </div>
           </div>

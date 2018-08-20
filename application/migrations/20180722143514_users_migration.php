@@ -6,8 +6,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Migration_Users_migration extends CI_Migration {
 
         public function up()
-        {  
-        	$this->dbforge->add_field(array(
+        {
+             $this->dbforge->add_field(array(
         	        'id' => array(
         	                        'type' => 'INT',
         	                        'unsigned' => TRUE,
@@ -71,7 +71,7 @@ class Migration_Users_migration extends CI_Migration {
         	                        'type' => 'INT',
         	                        'unsigned' => TRUE
         	                    ),
-        	                    'date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
+        	                    'created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
         	                    'last_login' => array(
         	                        'type' => 'DATETIME'
         	                    ),
@@ -89,12 +89,11 @@ class Migration_Users_migration extends CI_Migration {
         	                    )
         	));
         	$this->dbforge->add_key('id', TRUE);
-        	$this->dbforge->create_table('users');
-                
+        	$this->dbforge->create_table('users');   
         }
 
         public function down()
         {
-              $this->dbforge->drop_table('users');
+                 $this->dbforge->drop_table('users');
         }
 }

@@ -5,7 +5,7 @@
             <div class="col-xs-12 col-md-12 " style="background: #39800099;">
               <div class="wow fadeInUp text-center " style="padding: 10px">
                 <h3 class="display-4 font-bold white-text mb-3"><b>DASHBOARD-RDCONGO</b></h3>
-                <h4 class=" mt-3 white-text" style="font-size: bolder">Dashboard est une entreprise de service informatique, elle s’adresse aux PME/et aux grande entreprise de la place</h4>
+                <h4 class=" mt-3 white-text" style="font-size: bolder"><?=$this->lang->line('dashboardestune');?></h4>
               </div>
             </div>
           </div>
@@ -35,20 +35,13 @@
                         </div>
                         <div class="col-md-6 text-center text-md-left margins">
                             <div class="text-black">
-                                <h3 class="h1-responsive font-bold wow fadeIn " data-wow-delay="0.2s">À PROPOS</h3>
+                                <h3 class="h1-responsive font-bold wow fadeIn " data-wow-delay="0.2s"><?=$this->lang->line('apropos2w');?></h3>
                                     <hr class="hr-light wow fade" data-wow-delay="0.2s">
                                     <input type="checkbox" class="read-more-state" id="post-1" />
-                                    <span><h6 class="wow fadeIn read-more-wrap" data-wow-delay="0.2s">Crée en 2017 par Ir. Jonathan Mwema Muwawa, Dashboard est une entreprise de service informatique de 7 personnes, elle s’adresse aux PME/et aux grande entreprise de la place.<br>  <br>
+                                    <span><h6 class="wow fadeIn read-more-wrap" data-wow-delay="0.2s"><br>  <br>
                                     <!-- <span class="read-more-target">Juste pour avoir le system qui sort</span>-->
                                     <p><b>OFRRE GLOBAL:</b></p> 
-                                    <p style="text-align: justify;"> Dashboard propose à ses clients un ensemble des prestations qui couvrent tout type de système d’information (Progiciels, Logiciels, par informatique conseil, infographies, formation, assistances etc…) avec 3 pôles.
-                                    </p> 
-                                    <ul style="text-align: justify;">
-                                       <li>1. Le pole solution applicatives : Dashboard est revendeur et intégrateur de logiciels des gestions d’entreprise…
-                                       </li>
-                                       <li>2. Le pole solution Web et digital : création et suivis de site Web, catalogue électronique…</li>
-                                       <li>3. Solution Réseaux et sécurité informatique la « meilleur » Dashboard, c’est une Assistance efficaces avec une Hotline dédiée pour chacun de nos services, ainsi que des interventions sur site…</li>
-                                   </ul>
+                                    <?=$this->lang->line('creeen2017ews');?>
                                       
                                     </h6>
                                    </span>
@@ -57,15 +50,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 text-center text-md-left margins">
-                        	<h6>Compétences : </h6><br>
-                        	<span>Dashboard met l’accent sur les compétences de ses collaborateurs.</span><br><br>
-                        	<h6>Nos valeurs :</h6><br>
-                        	<span>Entant que prestataire des services, notre société, à travers l’ensemble de ses collaborateurs, s’attache au quotidien à respecter les valeurs essentielles de notre métier ;</span>
-                        	<p style="margin-left: 20px"> - Sens de l’accueil et de l’écoute</br>
-                        		- Esprit collaboratif</br>
-                        		- Investissement et volonté de performance</br>
-                                - Intégrité et respect de nos engagement</br>
-                        	</p>
+                          <?=$this->lang->line('creeen2017ews44');?>
                         </div>
                         
                         

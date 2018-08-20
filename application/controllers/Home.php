@@ -72,7 +72,7 @@ class Home  extends MY_Controller {
                          $_SESSION['user_id']  = (int)$user->id;
                          $_SESSION['username']  = (string)$user->username;
                          $_SESSION['avatar']  = (string)$user->avatar;
-                          $_SESSION['tache']  = (string)$user->tache;
+                       
 
                          $_SESSION['logged_in'] = (bool)true;
                                 ///$_SESSION['is_confirmed'] = (bool)$user->is_confirmed;

@@ -152,6 +152,21 @@ class User_model extends CI_Model {
 		);
 		$this->db->insert('post', $data);
 	}
+	function save_post_news($data){
+			$data = array(
+				 'text' => $data['text'],
+				  'ref_users' => $data['ref_users'],
+				  'link' => $data['link'],
+				  'sujet'=>$data['sujet'],
+				  'date' => date('Y-m-j H:i:s')
+			);
+			$this->db->insert('news', $data);
+			return false;
+			
+	}
+	function generateRandomString($length = 10) {
+	    return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+	}
 
 	
 }

@@ -69,14 +69,14 @@ textarea {
       <nav class="col-md-3 col-lg-2 d-none d-md-block  sidebar text-truncate"  style="position: fixed; height: 100%">
           <div class="sidebar-sticky">
                    <ul class="nav flex-column"><br>
-                       <li class="nav-item " style="margin-bottom: 10px; margin-top: 10px">
+                       <li class="nav-item " style="    margin-bottom: -17px;">
                            <a class="nav-link active text-dark system_nav" href="#" style="">
                             <img src="<?= base_url('assets/images/logo_icone/dash.jpg')?>" class="rounded-circle" width="20" height="20" alt=""> <span style="margin-top:10px;">&nbsp; Dashboard </span> </a>
                        </li><br>
                        <li class="nav-item">
                            <a class="nav-link  text-dark system_nav_actif  border border-left-0 border-right-0 border-bottom-0 border-secondary " href="#" style="margin-bottom: 10px">Actualité</a>
                         </li><br>
-                       <li class="nav-item">
+                       <li class="nav-item" style="margin-top: -20px;">
                            <a class="nav-link  text-dark system_nav" href="#"><i class=" fa fa-comments-o fa-lg " aria-hidden="true"></i> Forum </a>
                         </li>
                         <li class="nav-item ">
@@ -116,23 +116,22 @@ textarea {
         <div class="col-12">
           <div class="row">
             <div class="col-md-6 col-sm-12" style="min-height: 500px; padding-top: 20px">
-              <form method="post" id="uploadimage">
+              <form method="post" id="uploadimage" action="<?php echo base_url(); ?>n-pos" method="post"  enctype="multipart/form-data"  accept-charset="utf-8" >
               <div class="row">
                 <div class="col-12 system_white col-sm-12" style=" min-height :180px ;padding: 0px; ">
                     <div class="d-flex flex-row-reverse bg-light border">
                         <div class=" p-2 system_nav" style=" ">
                            <div class="input-group input-group-sm mb-3" style="height: 10px">
                               <div class="input-group-prepend">
-                                 <span class="input-group-text" id="inputGroup-sizing-sm">Sujet</span>
+                                 <span class="input-group-text" id="inputGroup-sizing-sm" style="height: 29px;" >Sujet</span>
                                </div>
-                              <input type="text" class="form-control" name="subjet" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="votre sujet..." class="subjet" id="subjet"  />
-                               <input type="hidden" class="form-control" name="user_id" id="user_id" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="<?php echo  $_SESSION['user_id'];?>">
+                              <input type="text"  class="form-control " name="subjet" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="votre sujet..."  id="subjet" style="height: 29px;border-radius: 0px 10px 10px 0px;" />
                            </div>
                         </div>
                         <div class="p-2 " style="color: #5e9555;">
                             <span class="btn btn-default btn-file" style=" margin-top: -7px;">
                                  <i class="fa fa-camera "></i> Photos 
-                                 <input type="file" id="my-file" type="file" name="my-file" multiple="multiple" accept="image/*">
+                                 <input  id="my-file" type="file" name="file_upload[]" multiple="multiple" accept="image/*">
                             </span>
                         </div>
                     </div>
@@ -140,7 +139,7 @@ textarea {
                     <div class="d-flex justify-content-center bg-light border overflow">
                         <div class="mr-auto p-2" style="font-size: 12px;margin-top: 7px;
                             word-wrap: break-word;">
-                            <img src="<?= base_url();?><?php echo $_SESSION['avatar'];?>" width="30" height="30" alt="<?php echo $_SESSION['username'];?>" title="<?php echo $_SESSION['username'];?>" class="rounded-circle bg-secondary" style="padding: 2px; background: white">
+                            <img src="<?= base_url();?><?php echo $avatar;?>" width="30" height="30" alt="<?php echo $username;?>" title="<?php echo $username;?>" class="rounded-circle bg-secondary" style="padding: 2px; background: white">
                         </div>
                         <div class="p-2">  <button type="submit" class="btn reinitialiser inputGroup-sizing-sm" onclick="annuler();">Annuler</button></div>
                         <div class="p-2">
