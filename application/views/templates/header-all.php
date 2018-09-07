@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto smooth-scroll">
             <li class="nav-item">
-              <a class="nav-link waves-effect waves-light"  href="#home"><?=$this->lang->line('dasrdc_acceuil');?> <span class="sr-only">(current)</span></a>
+              <a class="nav-link waves-effect "  onclick="location.href='<?=base_url()?><?php echo  $segment2;?>/home'" ><?=$this->lang->line('dasrdc_acceuil');?> <span class="sr-only">(current)</span></a>
             </li>
           </ul>
           <!-- Social Icon  -->

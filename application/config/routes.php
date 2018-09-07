@@ -12,6 +12,7 @@ $route['(:any)/plateforme/apropos'] = "plateforme/apropos";
 $route['(:any)/admin'] = "admin";
 $route['(:any)/admin'] = "ADMIN";
 $route['n-pos'] = "add/post";
+$route['ins'] ="add/ins_news";
 //$route['(:any)/signup'] = "signup";
 //$route['(:any)/signup'] = "SIGNUP";
 //$route['(:any)/auth'] = "auth";

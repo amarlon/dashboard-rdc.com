@@ -90,7 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-xs-12 col-md-12 " style="background: #39800099;">
               <div class="wow fadeInUp text-center " style="padding: 10px">
                 <h3 class="display-4 font-bold white-text mb-3"><b>DASHBOARD-RDCONGO</b></h3>
-                <h4 class="font-up font-bold white-text"><b>IMAGINE WHAT WE CAN DO TOGHETER </b></h4>
+                <h4 class="font-up font-bold white-text"><b>IMAGINE WHAT WE CAN DO TOGETHER </b></h4>
                 <h5 class=" mt-3 white-text" style="font-size: bolder">WELCOME IN TO OUR PLATFORM</h5>
               </div>
             </div>

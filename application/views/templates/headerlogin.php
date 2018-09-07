@@ -50,7 +50,7 @@
 
     <nav class="site-header sticky-top py-1">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="navbar-brand system-header-nav" href="#" title="mon profil">
+        <a style="cursor: pointer" class="navbar-brand system-header-nav" onclick="location.href='<?php echo base_url('users/profile/'.$username)?>'" title="mon profil">
             <img src="<?= base_url().$avatar;?>" width="30" height="30" alt="<?=$username;?>" title="<?=$username;?>" class="rounded-circle"> <span class="system-header"><?php  echo ucfirst($username); ?></span>
         </a>
         <a class="py-2 " href="#">
@@ -64,14 +64,17 @@
         <a class="py-2 d-none d-md-inline-block" href="#"></a>
         <a class="py-2 d-none d-md-inline-block" href="#"></a>
         <a class="py-2  navbar "> 
-          <i class=" fa fa-comments-o fa-lg font-color-white" aria-hidden="true" titre="forum voir tous les titres"><span class="badge badge-white text-danger">35</span></i> &nbsp;&nbsp;&nbsp;
+         
           <i class=" fa fa-home fa-lg font-color" title="cliquer pour revenir à la page d'acceuil" onclick="location.href='<?php echo base_url('/')?>'" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;
          <i class=" fa fa-sign-out fa-lg font-color" title="voulez vous quittez?" onclick="location.href='<?php echo base_url('users/logout')?>'" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-         <?php //if($_SESSION['tache']!='utilisateur'){
+         <?php $method= $this->router->fetch_method();
+             if($method!='profile'){
           ?>
-          <i  class="fa fa-cog fa-spin fa-lg fa-fw font-color"></i>
+          <i  onclick="location.href='<?php echo base_url('users/profile/'.$username)?>'" class="fa fa-cog fa-spin fa-lg fa-fw font-color"></i>
           <span class="sr-only">Loading...</span></i>
-          <?php //} ?>  
+          <?php }else{
+            ?> <i   onclick="location.href='<?php echo base_url('users/login')?>'" class="fa fa-arrow-circle-left font-color"></i>
+          <?php } ?>  
         </a>
       </div>
     </nav>

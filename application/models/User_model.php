@@ -157,15 +157,39 @@ class User_model extends CI_Model {
 				 'text' => $data['text'],
 				  'ref_users' => $data['ref_users'],
 				  'link' => $data['link'],
-				  'sujet'=>$data['sujet'],
+				  'subjet'=>$data['sujet'],
 				  'date' => date('Y-m-j H:i:s')
 			);
 			$this->db->insert('news', $data);
 			return false;
 			
 	}
+	function get_last_id_news(){
+		      $this->db->from('users');
+		     return $this->db->insert_id();
+	
+	}
 	function generateRandomString($length = 10) {
 	    return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+	}
+	function getNews() {
+	   $this->db->from('news');
+		$this->db->where('img_delete', '0');
+		$this->db->order_by('id_n','desc');
+		$this->db->join('users', 'users.id = news.ref_users');
+		$rs = $this->db->get();
+		return $rs->result_array();
+	}
+	function save_post_data_av($data){
+			$bv='assets/images/'.$data['file_name'];
+			$data = array(
+				 'avatar' => $bv,
+				  'username' => $data['file_usern']
+			);
+			$this->db->where('username', $data['username']);
+	        $this->db->update('users', $data);
+	        return true;
+			
 	}
 
 	

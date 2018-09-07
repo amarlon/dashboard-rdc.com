@@ -65,25 +65,24 @@ class Home  extends MY_Controller {
                 
         }
         if(isset($_COOKIE['username']) and isset($_COOKIE['password'])){
-                     $user_id = $this->user_model->get_user_id_from_username($_COOKIE['username']);
-                     $user    = $this->user_model->get_user($user_id);
-                     if($user!=''){
-                                // set session user datas
-                         $_SESSION['user_id']  = (int)$user->id;
-                         $_SESSION['username']  = (string)$user->username;
-                         $_SESSION['avatar']  = (string)$user->avatar;
-                       
-
-                         $_SESSION['logged_in'] = (bool)true;
-                                ///$_SESSION['is_confirmed'] = (bool)$user->is_confirmed;
-                         $_SESSION['is_admin']  = (bool)$user->is_admin;
-                        $this->load->view('templates/header');
-                        $this->load->view('pages/'.$page);
-                        $this->load->view('templates/footer');
-                     }else{
-                        redirect('users/logout');
-                     }
-               
+            $user_id = $this->user_model->get_user_id_from_username($_COOKIE['username']);
+            $user    = $this->user_model->get_user($user_id);
+            if($user!=''){
+                       // set session user datas
+                $_SESSION['user_id']  = (int)$user->id;
+                $_SESSION['username']  = (string)$user->username;
+                $_SESSION['avatar']  = (string)$user->avatar;
+            
+                $_SESSION['logged_in'] = (bool)true;
+                       ///$_SESSION['is_confirmed'] = (bool)$user->is_confirmed;
+                $_SESSION['is_admin']  = (bool)$user->is_admin;
+               $this->load->view('templates/header');
+               $this->load->view('pages/'.$page);
+               $this->load->view('templates/footer');
+            }else{
+               redirect('users/logout');
+            }
+    
 
         }
         else{

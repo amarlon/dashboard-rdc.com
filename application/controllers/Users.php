@@ -18,7 +18,7 @@ class Users  extends MY_Controller {
 		//$this->load->model('post_model');	
 		$this->load->library('form_validation');
         $this->load->database();
-        $this->load->helper(array('form', 'url','file'));
+        $this->load->helper(array('form', 'url','file','assets'));
         $this->load->helper('text'); 
 	}
 	public function index() {
@@ -80,10 +80,11 @@ class Users  extends MY_Controller {
 		if ($this->form_validation->run() == false) {
             if(isset($_COOKIE['username']) && isset($_COOKIE['password'])){
                 if($this->user_model->resolve_user_login($_COOKIE['username'], $_COOKIE['password']))
-                {
-					$this->session($_COOKIE['username']);
+                {   
 					$user_id = $this->user_model->get_user_id_from_username($_COOKIE['username']);
-				    $user    = $this->user_model->get_user($user_id);
+					$user    = $this->user_model->get_user($user_id);
+					$_SESSION['user_id']  = (int)$user->id;
+                    $_SESSION['logged_in'] = (bool)true;
 					$this->page_d_acceuil($user);
                 }
             }
@@ -104,9 +105,13 @@ class Users  extends MY_Controller {
                      setcookie('username', $username, time() + (86400 * 60), "/");
                      setcookie('password', $password, time() + (86400 * 60), "/");
 				}
-				$this->session($username);
+				$user_id = $this->user_model->get_user_id_from_username($username);
+                $user    = $this->user_model->get_user($user_id);
+                $_SESSION['user_id']  = (int)$user->id;
+                $_SESSION['logged_in'] = (bool)true;
 				$data=$user;
 				//$this->session->set_flashdata('in',$workpa)
+				
 				$this->page_d_acceuil($data);
 				
 			} else {
@@ -127,6 +132,7 @@ class Users  extends MY_Controller {
 	 */
 
 	public function page_d_acceuil($data){
+		 $data->news =$this->user_model->getNews();
          $this->load->view('templates/headerlogin',$data);
          $this->load->view('user/profile', $data);
 		 $this->load->view('templates/footerlogin', $data);
@@ -138,13 +144,43 @@ class Users  extends MY_Controller {
 	 * @access public
 	 * 
 	 */
-     function profile(){
-		$this->checksession();
-     	$user_id = $this->user_model->get_user_id_from_username($_SESSION['user_id']);
-        $members = $this->user_model->get_user($user_id);
-     	$this->load->view('templates/headerlogin');
-        $this->load->view('user/profile_users', $members);
-        $this->load->view('templates/footerlogin');
+     function profile($users){
+		//$this->checksession();
+     	$user_id = $this->user_model->get_user_id_from_username($users);
+		$members = $this->user_model->get_user($user_id);
+		$user_id1= $this->user_model->get_user_id_from_username($_COOKIE['username']);
+		$members1 = $this->user_model->get_user($user_id1);
+		if(!empty($members)){
+			$_SESSION['user_id']  = (int)$members1->id;
+            $_SESSION['logged_in'] = (bool)true;
+     	     $this->load->view('templates/headerlogin', $members);
+             $this->load->view('user/profile_users', $members);
+			 $this->load->view('templates/footerlogin');
+		}else{
+			echo '<div style="margin: 98px auto;background: #0f3d4f;width: fit-content;color: white;padding: 20px;border: 2px solid #00ff5a;">USER NO FOUND<br> <br><a href="'.base_url().'users/login"  style="color: wheat;text-decoration: none;margin: 0 auto;margin-left: 26px;">< Back</a></div>';
+		}
+	}
+
+	
+    public function avatar(){ 
+        $config['upload_path']="assets/images/"; 
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size'] = 3400;
+        $config['encrypt_name']= TRUE; 
+        $this->load->library('upload',$config);
+        $this->upload->initialize($config);
+        if (!$this->upload->do_upload('userfile')){
+           $error = array('error' =>$this->upload->display_errors());
+           redirect('users/login');
+
+        }else
+        {
+           $data = array('file_name' => $this->upload->file_name, 
+            'file_usern' => $this->input->post('username'));
+           $this->user_model->save_post_data_av($data);
+           redirect('users/profile/'.$this->input->post('username')); 
+        //$file_name = $this->upload->file_name;
+		}
 	}
 	
 	/**
@@ -171,10 +207,7 @@ class Users  extends MY_Controller {
 	 * session()
 	 */
 	private function session($username){
-       $user_id = $this->user_model->get_user_id_from_username($username);
-       $user    = $this->user_model->get_user($user_id);
-       $_SESSION['user_id']  = (int)$user->id;
-       $_SESSION['logged_in'] = (bool)true;
+       
 	}
 	/**
 	 * checksession
@@ -182,7 +215,7 @@ class Users  extends MY_Controller {
 	 * check if user connect
 	 */
 	private function checksession(){
-		if($this->session->userdata('logged_in')!=true){ redirect('users'); }
+		if($_SESSION['logged_in']!=true ){ redirect('users'); }
 	}
     /**checksession()
 	 * Cookiedestroy

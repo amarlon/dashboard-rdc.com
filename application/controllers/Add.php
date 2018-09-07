@@ -25,8 +25,8 @@ class Add  extends MY_Controller {
                  $lkn= $this->user_model->generateRandomString(24);
                  $data = array(    
                    'text' => $this->input->post('text'),
-                   'ref_users' =>$_SESSION['user_id'],
-                   'sujet' =>$_SESSION['sujet'],
+                   'ref_users' =>$this->input->post('users'),
+                   'sujet' =>$this->input->post('subjet'),
                    'link' => $lkn
                  );
                 $this->user_model->save_post_news($data);
@@ -36,7 +36,8 @@ class Add  extends MY_Controller {
                      $files = $_FILES['file_upload'];
                      for ($i =0; $i< $number_of_files; $i++){
                          if($_FILES['file_upload']['error'][$i]!=0){
-                              redirect('profil');
+                               redirect('users/login');
+                           
                          }
                      }
                      $config['upload_path']=FCPATH.'assets/news/'; 
@@ -56,12 +57,56 @@ class Add  extends MY_Controller {
                              $insert[$i]['data']=date('Y-m-j H:i:s');
                          }
                     }
-                    $this->db->insert_batch('img_news', $insert);
-                    redirect('profil');
+                    if(isset($insert)){
+                        $this->db->insert_batch('img_news', $insert);
+                    }
+                    redirect('users/login');
+                }else{
+
                 }
             }
-             echo 'salut';
+             
         }
+    }
+    
+    public function ins_news(){
+         if (!empty($_POST['tn'])){
+             $data = array(
+               'text' => $_POST['tn'],
+               'date' => date('Y-m-j H:i:s'),
+               'id_ref_n' =>$_POST['vd'],
+               'av_users' =>$_POST['us'],
+               'users' => $_POST['cd']
+             );
+          
+             $this->db->insert('news_com', $data);
+                redirect('users/login');
+        
+         }else{
+               redirect('users/login');
+         }
+        
+    }
+    public function update_resume(){
+         if (!empty($_POST['email'])){
+             $data = array(
+               'email' => $_POST['email'],
+               'fullname' => $_POST['fullname'],
+               'profession' =>$_POST['profession'],
+               'phone' =>$_POST['phone'],
+               'website' => $_POST['website'],
+               'country' => $_POST['country']
+             );
+
+             $this->db->where('id', $_POST['user_id']);
+             $this->db->update('users', $data);
+              redirect('users/profile'.$this->input->post('username'));
+               
+        
+         }else{
+             
+               redirect('users/login');
+         }
     }
 
 }

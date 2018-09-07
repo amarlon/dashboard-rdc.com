@@ -206,7 +206,7 @@
         <div class="row wow fadeIn" data-wow-delay="0.4s">
           <!--First column-->
           <div class="col-md-8 mb-r">
-            <form method="POST" action="<?= base_url()?>home/mail" style="background: rgba(159, 152, 7, 0.2) none repeat scroll 0% 0%;padding-top: 10px;color: white;border-radius: 5px;
+            <form method="POST" content-type="multipart/alternative;" action="<?= base_url()?>home/mail" style="background: rgba(159, 152, 7, 0.2) none repeat scroll 0% 0%;padding-top: 10px;color: white;border-radius: 5px;
                  border-radius: 10px;padding-left: 10px">
               <!--First row-->
               <div class="row">
@@ -214,7 +214,7 @@
                 <div class="col-md-6">
                   <div class="md-form">
                     <div class="md-form">
-                      <input type="text" id="form41" class="form-control" name="fullname" value="">
+                      <input type="text" id="form41" style="color:white !important" class="form-control" name="fullname" value="">
                       <label for="form41" class="white-text"><b><?=$this->lang->line('votrenom');?></b></label>
                     </div>
                   </div>
@@ -223,7 +223,7 @@
                 <div class="col-md-6">
                   <div class="md-form">
                     <div class="md-form">
-                      <input type="text" id="form52" class="form-control" name="email" value="">
+                      <input type="text" id="form52"  style="color:white !important" class="form-control" name="email" value="">
                       <label for="form52" class="white-text"><?=$this->lang->line('votremail');?></label>
                     </div>
                   </div>
@@ -234,7 +234,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="md-form">
-                    <input type="text" id="form51" class="form-control" name="sujet" value="">
+                    <input type="text" id="form51" class="form-control" name="sujet" style="color:white !important" value="">
                     <label for="form51" class="white-text"><?=$this->lang->line('sujet');?></label>
                   </div>
                 </div>
@@ -245,7 +245,7 @@
                 <!--First column-->
                 <div class="col-md-12">
                   <div class="md-form">
-                    <textarea type="text" id="form76" class="md-textarea" name="message" value=""></textarea>
+                    <textarea type="text" id="form76" class="md-textarea" name="message" style="color:white !important" value=""></textarea>
                     <label for="form76" class="white-text"><?=$this->lang->line('votremessage');?></label>
                   </div>
                 </div>
