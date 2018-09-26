@@ -27,7 +27,9 @@ I decided to open source this because there is really perfectelly dashboard for 
 Change the following code with the localhost of your website, the config['baseurl'] must be the same like your own
 
 --------------------------------------------------------------
+```php
        $config['base_url'] = 'http://localhost:8888/dashboard-rdc.com/';
+```
 ---------------------------------------------------------------
 
 
