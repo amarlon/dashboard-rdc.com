@@ -6,3 +6,6 @@ You can easily load images from an internet URL, drawable, or file. And there ar
 
 ## Demo
 
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/39515872/46099092-bca68280-c17a-11e8-8e67-65c743e09149.gif)
+
+
