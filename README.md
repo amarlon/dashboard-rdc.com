@@ -12,3 +12,5 @@ I decided to open source this because there is really perfectelly dashboard for 
 
 
 The 
+
+![vlc-record-2018-09-26-11h39m36s-dash mov-](https://user-images.githubusercontent.com/39515872/46101552-1d38be00-c181-11e8-90db-590b42db676a.gif)
