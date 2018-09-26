@@ -1,4 +1,4 @@
-# dashboard-rdc.com with Codeigniter
+# TEMPLATE PHP-MYSQL -HTML -CSS - JQUERY -BOOTSTRAP with Codeigniter
 
 This is a simple dashboard  with forum. I decided to open source this because there is really not an attractive
 
