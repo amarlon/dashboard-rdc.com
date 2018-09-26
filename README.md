@@ -38,7 +38,7 @@ Change the following code with the localhost of your website, the config['baseur
 
         $db['default'] = array(
 	                            'dsn'	=> '',
-	                            'hostname' => 'localhost',// inserer votre domaine pour le bdd
+	![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ` 'hostname' => 'localhost'` ,
 	                            'username' => 'root',
 	                            'password' => 'root',
 	                            'database' => 'dashboard',
