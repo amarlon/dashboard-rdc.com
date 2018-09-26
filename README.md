@@ -49,7 +49,7 @@ Change the following code with the localhost of your website, the config['baseur
 	                            'cache_on' => FALSE,
 	                            'cachedir' => '',
 	                            'char_set' => 'utf8',
-                            	'dbcollat' => 'utf8_general_ci',
+                            	    'dbcollat' => 'utf8_general_ci',
 	                            'swap_pre' => '',
 	                            'encrypt' => FALSE,
 	                            'compress' => FALSE,
