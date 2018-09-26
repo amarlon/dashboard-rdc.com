@@ -4,5 +4,5 @@ This is a simple dashboard  with forum. I decided to open source this because th
 
 You can easily load images from an internet URL, drawable, or file. And there are many kinds of amazing animations you can use. :-D
 
-##Demo
+## Demo
 
