@@ -62,3 +62,6 @@ Change the following code with the localhost of your website, the config['baseur
                             );
 
 ```
+##About me
+
+I am a Freelance and chiefs of developer team of hotshi in https://www.hotshi.com  in  Nederland. I love programing, love PHP, love everything that is interesting. If you get any problems when using this Template or you have an internship opportunity, please feel free to email me. 😃
