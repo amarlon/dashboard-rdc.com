@@ -17,3 +17,22 @@ I decided to open source this because there is really perfectelly dashboard for 
     forum with system comment for your busness
 
 ![vlc-record-2018-09-26-11h39m36s-dash mov-](https://user-images.githubusercontent.com/39515872/46101552-1d38be00-c181-11e8-90db-590b42db676a.gif)
+
+## Usage
+
+### Step 1
+
+##### Config/config 
+
+Change the following code with the localhost of your website, the config['baseurl'] must be the same like your own
+
+--------------------------------------------------------------
+       $config['base_url'] = 'http://localhost:8888/dashboard-rdc.com/';
+---------------------------------------------------------------
+
+
+### Step 2 
+
+##### Config/database.php
+
+
