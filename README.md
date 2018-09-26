@@ -35,10 +35,11 @@ Change the following code with the localhost of your website, the config['baseur
 
 ##### Config/database.php
 -------------------------------------------------------------------
-
+```php
+ 
         $db['default'] = array(
 	                            'dsn'	=> '',
-	- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ` 'hostname' => 'localhost' ` ,
+	                            'hostname' => 'localhost',
 	                            'username' => 'root',
 	                            'password' => 'root',
 	                            'database' => 'dashboard',
@@ -58,3 +59,4 @@ Change the following code with the localhost of your website, the config['baseur
 	                            'save_queries' => TRUE
                             );
 
+```
