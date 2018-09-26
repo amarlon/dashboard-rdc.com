@@ -34,5 +34,27 @@ Change the following code with the localhost of your website, the config['baseur
 ### Step 2 
 
 ##### Config/database.php
+-------------------------------------------------------------------
 
+        $db['default'] = array(
+	                            'dsn'	=> '',
+	                            'hostname' => 'localhost',// inserer votre domaine pour le bdd
+	                            'username' => 'root',
+	                            'password' => 'root',
+	                            'database' => 'dashboard',
+	                            'dbdriver' => 'mysqli',
+	                            'dbprefix' => '',
+	                            'pconnect' => FALSE,
+	                            'db_debug' => (ENVIRONMENT !== 'production'),
+	                            'cache_on' => FALSE,
+	                            'cachedir' => '',
+	                            'char_set' => 'utf8',
+                            	'dbcollat' => 'utf8_general_ci',
+	                            'swap_pre' => '',
+	                            'encrypt' => FALSE,
+	                            'compress' => FALSE,
+	                            'stricton' => FALSE,
+	                            'failover' => array(),
+	                            'save_queries' => TRUE
+                            );
 
